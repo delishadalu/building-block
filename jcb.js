@@ -6,14 +6,18 @@ class jcb{
         this.height=height
         this.image=loadImage("crane2.png")
         var options={
-            isStatic:false
+            isStatic:true,
+
         }
         this.body=Bodies.rectangle(this.x,this.y,this.width,this.height,options)
+        World.add(world,this.body)
     }
 
     display(){
-        rectMode(CENTER)
+        push()
+        imageMode(CENTER)
         image(this.image,this.body.position.x,this.body.position.y,this.width,this.height)
+        pop()
     }
 
     
